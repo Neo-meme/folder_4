@@ -33,6 +33,22 @@ public class CasaDeApuestas{
         return tickets;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }  
+
+    public void setEventos(List<EventoDeportivo> eventos) {
+        this.eventos = eventos;
+    }
+     public void setJugadores(List<jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+    
+    public void setTickets(List<TicketApuesta> tickets) {
+        this.tickets = tickets;
+    }
+
+
     //agregacion EventoDeportivo
     public void crearEvento(EventoDeportivo evento) {
         eventos.add(evento);

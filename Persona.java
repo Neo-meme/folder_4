@@ -1,16 +1,19 @@
-abstract class Persona {
-    String nombre;
 
-    //constructor
+public abstract class Persona {
+
+    // Atributo
+    protected String nombre;
+
+    // Constructor
     public Persona(String nombre) {
         this.nombre = nombre;
     }
 
-    //getter y setter
+    // Getter
     public String getNombre() {
         return nombre;
-    }   
-    
+    }
 
+    // Método abstracto (obliga a las clases hijas a implementarlo)
     public abstract String getIdentificador();
 }

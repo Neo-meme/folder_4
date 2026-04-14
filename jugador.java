@@ -1,15 +1,24 @@
 import java.util.List;
+import java.util.ArrayList;
 
 public class jugador extends Persona {
-    String id;
-    double saldo;
-    List<TicketApuesta> tickets;
+    // Atributos
+    private String id;
+    private double saldo;
+    private List<TicketApuesta> tickets; // Asociación
 
     //constructor
     public jugador(String nombre, String id, double saldo) {
         super(nombre);
         this.id = id;
         this.saldo = saldo;
+        this.tickets = new ArrayList<>();
+    }
+
+    //metodo abstracto
+    @Override
+    public String getIdentificador() {
+        return id;
     }
 
     //getters y setters
@@ -21,7 +30,19 @@ public class jugador extends Persona {
     }   
     public List<TicketApuesta> getTickets() {
         return tickets;
-    }   
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setTickets(List<TicketApuesta> tickets) {
+        this.tickets = tickets;
+    }
 
     //asociacion TicketApuesta
     public void crearTicket(TicketApuesta ticket) {
@@ -32,11 +53,19 @@ public class jugador extends Persona {
         tickets.remove(ticket);
     }
 
-
-    //metodo abstracto
-    @Override
-    public String getIdentificador() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getIdentificador'");
+    //metodos para manejar el saldo del jugador
+    public void depositar(double monto) {
+        saldo += monto;
     }
+
+    public boolean retirar(double monto) {
+        if (saldo >= monto) {
+            saldo -= monto;
+            return true;
+        }
+        return false;
+    }
+
+
+    
 }
