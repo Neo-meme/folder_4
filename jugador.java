@@ -2,6 +2,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class jugador extends Persona {
+
+    // ASOCIACIÓN: Un jugador puede tener múltiples tickets,
+    // pero los tickets pueden existir sin el jugador.
+
     // Atributos
     private String id;
     private double saldo;

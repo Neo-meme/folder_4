@@ -2,17 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TicketApuesta {
+    
+    // ASOCIACIÓN: Un ticket pertenece a un jugador.
+
     private String codigo;
     private jugador jugador;
     private List<LineaApuesta> Lineas;
     private Double montoTotal;
 
     //constructor
-    public TicketApuesta(String codigo, jugador jugador, Double monto_total) {
+    public TicketApuesta(String codigo, jugador jugador, Double monto) {
         this.codigo = codigo;
         this.jugador = jugador;
         this.Lineas = new ArrayList<>();
-        this.montoTotal = monto_total;
+        this.montoTotal = monto;
     }
 
     //getters y setters
@@ -58,7 +61,7 @@ public class TicketApuesta {
         System.out.println("Líneas de apuesta:");
         for (LineaApuesta linea : Lineas) {
             System.out.println("- Evento: " + linea.getEvento().getDescripcion()
-                    + " | Pronóstico: " + linea.getPronostico()
+                    + " | Pronóstico: " + linea.getTipo()
                     + " | Cuota: " + linea.getCuotaSeleccionada());
         }
     }

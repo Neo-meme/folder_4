@@ -6,19 +6,19 @@ public class LineaApuesta {
 
     // Atributos
     private EventoDeportivo evento;
-    private TipoPronostico pronostico;
+    private TipoPronostico tipo;
     private double cuotaSeleccionada;
 
     // Constructor
-    public LineaApuesta(EventoDeportivo evento, TipoPronostico pronostico) {
+    public LineaApuesta(EventoDeportivo evento, TipoPronostico tipo) {
         this.evento = evento;
-        this.pronostico = pronostico;
-        this.cuotaSeleccionada = obtenerCuota(evento, pronostico);
+        this.tipo = tipo;
+        this.cuotaSeleccionada = obtenerCuota(evento, tipo);
     }
 
     // Método privado para determinar la cuota según el pronóstico
-    private double obtenerCuota(EventoDeportivo evento, TipoPronostico pronostico) {
-        switch (pronostico) {
+    private double obtenerCuota(EventoDeportivo evento, TipoPronostico tipo) {
+        switch (tipo) {
             case LOCAL:
                 return evento.getCuotaLocal();
             case EMPATE:
@@ -35,8 +35,8 @@ public class LineaApuesta {
         return evento;
     }
 
-    public TipoPronostico getPronostico() {
-        return pronostico;
+    public TipoPronostico getTipo() {
+        return tipo;
     }
 
     public double getCuotaSeleccionada() {

@@ -3,6 +3,9 @@ import java.util.ArrayList;
 
 public class CasaDeApuestas{
 
+    // AGREGACIÓN: La casa contiene jugadores, eventos y tickets,
+    // pero estos pueden existir independientemente de ella.
+
     private String nombre;
     private List<EventoDeportivo> eventos; //agregacion 1 a n 
     private List<jugador> jugadores; //agregacion 1 a n 
@@ -43,7 +46,7 @@ public class CasaDeApuestas{
      public void setJugadores(List<jugador> jugadores) {
         this.jugadores = jugadores;
     }
-    
+
     public void setTickets(List<TicketApuesta> tickets) {
         this.tickets = tickets;
     }
